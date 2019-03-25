@@ -6,7 +6,7 @@ ruby '2.6.2'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.2', '>= 5.2.2.1'
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+gem 'pg', '~> 1.0'
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
 # Use SCSS for stylesheets
@@ -24,7 +24,7 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 
 # Use Redis adapter to run Action Cable in production
-# gem 'redis', '~> 4.0'
+gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -54,3 +54,33 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+gem 'spree', '~> 3.7'
+gem 'spree_auth_devise', '~> 3.5'
+gem 'spree_gateway', '~> 3.4'
+
+gem 'spree_i18n', github: 'spree-contrib/spree_i18n'
+gem 'spree_social', github: 'spree-contrib/spree_social'
+gem 'spree_editor', github: 'spree-contrib/spree_editor'
+gem 'tinymce-rails-langs'
+gem 'spree_volume_pricing',  github: 'spree-contrib/spree_volume_pricing'
+gem 'spree_paypal_express', github: 'spree-contrib/better_spree_paypal_express'
+gem 'spree_admin_roles_and_access', github: 'vinsol-spree-contrib/spree_admin_roles_and_access'
+gem 'spree_slider', github: 'spree-contrib/spree_slider'
+
+gem 'spree_html_invoice', github: 'eddxw/spree_html_invoice'
+#### gem 'spree-point-of-sale', github: 'eddxw/datatables_spree_point_of_sale'
+# gem 'spree-point-of-sale', path: '../spree-point-of-sale'
+
+gem 'barby', '~> 0.6.6'
+gem 'spree-point-of-sale', path: 'extensiones/spree-point-of-sale'
+
+gem 'semantic-ui-sass'
+
+gem 'ajax-datatables-rails'
+gem 'yajl-ruby', require: 'yajl'
+gem 'draper'
+
+gem 'spree_order_events_tracker', github: 'vinsol-spree-contrib/spree_order_events_tracker', :branch => "develop"
+gem 'spree_admin_activity_tracker', github: 'vinsol-spree-contrib/spree_admin_activity_tracker', branch: 'develop'
+gem 'vertical-timeline-rails'
