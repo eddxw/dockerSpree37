@@ -4,7 +4,7 @@ services:
   web:
     image: athermosillo/athspree:prod_osx
     ports:
-      - "3000:3000"
+      - "3001:3000"
     env_file:
       - .env/production/database
       - .env/production/web

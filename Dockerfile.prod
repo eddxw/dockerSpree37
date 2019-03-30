@@ -11,6 +11,7 @@ RUN echo "deb https://dl.yarnpkg.com/debian/ stable main" | \
   tee /etc/apt/sources.list.d/yarn.list
 
 RUN apt-get update -yqq && apt-get install -yqq --no-install-recommends \
+  netcat \
   nodejs \
   yarn
 
@@ -23,11 +24,19 @@ WORKDIR /usr/src/app
 
 ENV BUNDLE_PATH /gems
 
-RUN bundle install
+RUN bundle install --without development test
 
 COPY . /usr/src/app/
 
 RUN ["chmod", "+x", "/usr/src/app/wait-for"]
+
+
+ENV RAILS_ENV production
+
+ENV DATABASE_HOST database
+ENV POSTGRES_USER postgres
+ENV POSTGRES_PASSWORD pablitoclavounclavito
+ENV POSTGRES_DB athspree_production
 
 RUN bin/rails assets:precompile
 

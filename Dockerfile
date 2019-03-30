@@ -24,7 +24,7 @@ WORKDIR /usr/src/app
 
 ENV BUNDLE_PATH /gems
 
-RUN bundle install
+RUN bundle install 
 
 COPY . /usr/src/app/
 
