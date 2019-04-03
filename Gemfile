@@ -60,6 +60,8 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
+gem 'activerecord-nulldb-adapter'
+
 gem 'spree', '~> 3.7'
 gem 'spree_auth_devise', '~> 3.5'
 gem 'spree_gateway', '~> 3.4'
@@ -74,11 +76,10 @@ gem 'spree_admin_roles_and_access', github: 'vinsol-spree-contrib/spree_admin_ro
 gem 'spree_slider', github: 'spree-contrib/spree_slider'
 
 gem 'spree_html_invoice', github: 'eddxw/spree_html_invoice'
-#### gem 'spree-point-of-sale', github: 'eddxw/datatables_spree_point_of_sale'
-# gem 'spree-point-of-sale', path: '../spree-point-of-sale'
 
 gem 'barby', '~> 0.6.6'
-gem 'spree-point-of-sale', path: 'extensiones/spree-point-of-sale'
+# gem 'spree-point-of-sale', path: 'extensiones/spree-point-of-sale'
+gem 'spree-point-of-sale', github: 'eddxw/datatables_spree_point_of_sale'
 
 gem 'semantic-ui-sass'
 

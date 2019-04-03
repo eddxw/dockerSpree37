@@ -30,13 +30,11 @@ COPY . /usr/src/app/
 
 RUN ["chmod", "+x", "/usr/src/app/wait-for"]
 
-
 ENV RAILS_ENV production
-
-ENV DATABASE_HOST database
 ENV POSTGRES_USER postgres
-ENV POSTGRES_PASSWORD pablitoclavounclavito
-ENV POSTGRES_DB athspree_production
+ENV DB_ADAPTER=nulldb
+
+ARG DB_ADAPTER
 
 RUN bin/rails assets:precompile
 
