@@ -1,0 +1,48 @@
+version: '3'
+
+services:
+  web:
+    image: athermosillo/athspree:prod_armhf
+    ports:
+      - "80:3000"
+    env_file:
+      - .env/production/database
+      - .env/production/web
+
+  redis:
+    image: redis
+
+  database:
+    image: postgres
+    env_file:
+      - .env/production/database
+    volumes:
+      - db_data:/var/lib/postgresql/data
+
+  db-creator:
+    image: athermosillo/athspree:prod_osx
+    command: ["./wait-for", "--timeout=300", "database:5432", "--",   
+              "bin/rails", "db:create"]   
+    env_file:
+      - .env/production/database
+      - .env/production/web
+    deploy:
+      restart_policy:
+        condition: none
+
+  db-migrator:
+    image: athermosillo/athspree:prod_osx
+    command: ["./wait-for", "--timeout=300", "database:5432", "--",   
+              "bin/rails", "db:migrate"]    
+    env_file:
+      - .env/production/database
+      - .env/production/web
+    deploy:
+      restart_policy:
+        condition: none
+    depends_on:     
+      - db-creator   
+
+volumes:
+  db_data:
+

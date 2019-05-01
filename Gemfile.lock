@@ -150,9 +150,17 @@ GEM
       activemodel (= 5.2.3)
       activesupport (= 5.2.3)
       arel (>= 9.0)
+<<<<<<< HEAD
     activestorage (5.2.3)
       actionpack (= 5.2.3)
       activerecord (= 5.2.3)
+=======
+    activerecord-nulldb-adapter (0.3.9)
+      activerecord (>= 2.0.0)
+    activestorage (5.2.2.1)
+      actionpack (= 5.2.2.1)
+      activerecord (= 5.2.2.1)
+>>>>>>> 7dd58ab4026d3e1952dbba2c65fc78ca86fba9cf
       marcel (~> 0.3.1)
     activesupport (5.2.3)
       concurrent-ruby (~> 1.0, >= 1.0.2)
@@ -246,7 +254,11 @@ GEM
     globalid (0.4.2)
       activesupport (>= 4.2.0)
     hashie (3.6.0)
+<<<<<<< HEAD
     highline (2.0.2)
+=======
+    highline (2.0.1)
+>>>>>>> 7dd58ab4026d3e1952dbba2c65fc78ca86fba9cf
     hirb (0.7.3)
     htmlentities (4.3.4)
     i18n (1.6.0)
@@ -378,7 +390,11 @@ GEM
     puma (3.12.1)
     rabl (0.13.1)
       activesupport (>= 2.3.14)
+<<<<<<< HEAD
     rack (2.0.7)
+=======
+    rack (2.0.6)
+>>>>>>> 7dd58ab4026d3e1952dbba2c65fc78ca86fba9cf
     rack-contrib (2.1.0)
       rack (~> 2.0)
     rack-test (1.1.0)
@@ -578,6 +594,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  activerecord-nulldb-adapter
   ajax-datatables-rails
   awesome_print
   barby (~> 0.6.6)
