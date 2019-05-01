@@ -74,11 +74,10 @@ gem 'spree_admin_roles_and_access', github: 'vinsol-spree-contrib/spree_admin_ro
 gem 'spree_slider', github: 'spree-contrib/spree_slider'
 
 gem 'spree_html_invoice', github: 'eddxw/spree_html_invoice'
-#### gem 'spree-point-of-sale', github: 'eddxw/datatables_spree_point_of_sale'
-# gem 'spree-point-of-sale', path: '../spree-point-of-sale'
 
 gem 'barby', '~> 0.6.6'
-gem 'spree-point-of-sale', path: 'extensiones/spree-point-of-sale'
+# gem 'spree-point-of-sale', path: 'extensiones/spree-point-of-sale'
+gem 'spree-point-of-sale', github: 'eddxw/datatables_spree_point_of_sale'
 
 gem 'semantic-ui-sass'
 
