@@ -1,0 +1,78 @@
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/se/dt-1.10.18/datatables.min.css"/>
+
+<script type="text/javascript" src="https://cdn.datatables.net/v/se/dt-1.10.18/datatables.min.js"></script>
+
+<% content_for :page_title do %>
+  <%= Spree.t(:users) %>
+<% end %>
+
+<% content_for :page_actions do %>
+  <%= link_to(new_admin_user_url, id: 'admin_new_user_link', class: "ui large blue ui labeled icon button") do %>
+    <i class="icon user plus"></i>
+    <%= Spree.t(:new_user) %>
+  <% end %>
+<% end if can? :create, Spree::user_class %>
+
+
+<table id="users-datatable" class="ui celled compact blue table" style="width:100%" data-source="<%= admin_users_path(format: :json) %>">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Nombre</th>
+      <th>Email</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+  </tbody>
+</table>
+
+<script>
+  jQuery(document).ready(function() {
+    var oTable = $('#users-datatable').dataTable({
+      "processing": true,
+      "serverSide": true,
+      "ajax": $('#users-datatable').data('source'),
+      "pagingType": "full_numbers",
+      "columns": [
+        {"data": "id"},
+        {"data": "complete_name"},
+        {"data": "email"},
+        {"data": "dt_actions", sortable: false},
+      ],
+      "language": {
+        "lengthMenu": "Mostrar _MENU_ registros por pagina",
+        "zeroRecords": "No se encontraron coincidencias",
+        "info": "Mostrando pagina _PAGE_ de _PAGES_",
+        "infoEmpty": "No hay registros",
+        "infoFiltered": "(filtrado de _MAX_ registros totales)",
+        "loadingRecords": "Cargando...",
+        "search": "Buscar:",
+        "paginate": {
+            "first": "Primero",
+            "last": "Ultimo",
+            "next": "Siguiente",
+            "previous": "Anterior"
+        }
+      },
+    });
+    var timeout = null;
+
+    $("div.dataTables_filter input").unbind();
+    $("div.dataTables_filter input").keyup( function (e) {
+      e.preventDefault();
+
+      clearTimeout(timeout);
+      let search = this.value;
+      // Make a new timeout set to go off in 800ms
+      timeout = setTimeout(function () {
+          oTable.fnFilter( search );
+      }, 500);
+
+      if (e.keyCode == 13) {
+        oTable.fnFilter( search );
+      }
+    } );
+  });
+</script>

@@ -1,0 +1,395 @@
+es-MX:
+  users: "Usuarios"
+  users_report_description: "User description"
+  variants: "Variantes"
+  variants_export_description: "Descripcion de variantes"
+  preview: "Vista previa"
+  product_label: "Etiqueta SKU"
+  product_label2: "Etiqueta EAN-13"
+  o_inclusion_date: " Fecha de inclusión"
+  o_price: " Precio"
+  ascent: " Ascendente "
+  descent: " Descendente "
+  devise:
+    omniauth_callbacks:
+      success: "Has iniciado sesión con el servicio: %{kind}."
+  spree_slider_locations:
+    config_name: "Localizacion Diapositivas"
+  active_shipping_settings: "Configuracion Active Shipping"
+  spree:
+    select_stock_location: 'Ubicación de inventario'
+    timeline: Historial
+    spree_tracking:
+      action: Acción
+      action_performed_at: Acción realizada el
+      actions_performed_from: Acciones realizadas desde
+      actions_performed_upto: Acciones realizadas hasta
+      controller: Controller
+      entity_id: Entity ID
+      entity_type: Entity Type
+      entity_errors: Entity Errors
+      entity_errors_cont: Entity Error Message Contains
+      flash_cont: Flash Message Contains
+      ip_address: IP Address
+      response_code: Response Code
+      request_parameters: Request Parameters
+      request_parameters_cont: Request Parameters Contains
+      title: Admin Activity Tracking
+      updated_parameters: Updated Parameters
+      user_email: User Email
+      view: Ver
+      from: desde
+      upto: hasta
+    or: "ó"
+    unable_to_access_requested_resource: No se puede acceder al recurso solicitado
+    themes: Temas
+    vinsol_spree_themes: Tema
+    templates: Templates
+    path: Path
+    format: Format
+    handler: Handler
+    body: Body
+    name: Nombre
+    state: Estado
+    theme_states:
+      compiled: Compilado
+      drafted: Draft
+      published: Publicado
+
+    actions:
+      themes: Themes
+      upload: Upload
+      compiled: Compilar
+      published: Publicar
+      view_templates: Templates
+      new_template: New Template
+      download: Download
+      preview: Previsualizar
+
+    models:
+      theme:
+        minimum_active_error: Al menos un tema debe de estar publicado.
+        no_destory_error: El tema publicado no puede ser removido. Publicar otro tema antes de remover este.
+
+    flash:
+      admin:
+        themes:
+          upload:
+            success: "Theme %{name} successfully uploaded."
+            failure: "Something went wrong, theme could not be uploaded."
+          state_change:
+            success: "Theme %{name} successfully %{state}."
+            failure: "Something went wrong, theme %{name} could not be %{state} due to the following reason:- %{errors}"
+          destroy:
+            success: "Theme %{name} successfully removed."
+            failure: "Something went wrong, theme %{name} could not be removed due to following reasons:- %{errors}"
+          download:
+            failure: "Something went wrong, theme %{name} could not be downloaded due to following reason:- %{errors}"
+
+    warnings:
+      update_metainfo: 'Make sure you update the meta info details in file meta_info.yml once the theme is updated. You will need to download the theme and reupload it.'
+      preview_mode_message: Preview Mode
+
+    current_count_on_hand: En existencia
+    product_name: Nombre del producto
+    sku_and_options_text: SKU
+    notice_messages:
+      product_cloned: El producto ha sido clonado
+      product_deleted: El producto ha sido borrado
+      product_not_cloned: "El producto no pudo ser clonado. Razón: %{error}"
+      product_not_deleted: "El producto no pudo ser borrado. Razón: %{error}"
+      variant_deleted: La Variante ha sido borrada.
+      variant_not_deleted: "La Variante no pudo ser borrada. Razón: %{error}"
+    preview_product: "Ver Producto"
+    new_adjustment: Crear ajuste
+    order: Orden
+    order_adjustments: Ajustes
+    order_already_updated: Orden Actualizada
+    order_approved: Orden aprovada
+    order_canceled: Orden cancelada
+    order_details: Detalles de orden
+    order_email_resent: Reenviar email de la orden
+    order_information: Información de la orden
+    order_line_items: Artículos en la orden
+    item_total: "Subtotal"
+    order_number: "Orden: %{number}"
+    insights: Insights
+    insight:
+      heading: 'Insights: %{type}'
+      tab_heading: Insights
+      not_found: Reporte no encontrado.
+      product_views:
+        title:  Vistas de productos
+        description: Para obtener el número de veces que los clientes ven la página de demostración del producto.
+        product_name: Producto
+        views: Vistas totales
+        users: Usuarios(Único)
+        guest_sessions: Sesiones de invitados
+      cart_additions:
+        title: Producto añadido al carrito
+        additions: Adiciones
+        description: Proyectará los datos sobre cuántas veces se ha agregado el producto al carrito.
+        product_name: Producto
+        quantity_change: Añadidos
+        sku: Variante
+      cart_removals:
+        title: Producto removido del carrito
+        description: Proyectará los datos sobre la cantidad de tiempo que el producto ha sido retirado del carrito.
+        product_name: Producto
+        quantity_change: Sustraídos
+        removals: Removidos
+        sku: Variante
+      cart_updations:
+        title: Cambios de un producto en el carrito
+        description: Proyectará los datos sobre cuántas veces se ha actualizado el producto desde el carrito.
+        product_name: Producto
+        quantity_decrease: Sustraídos
+        quantity_increase: Añadidos
+        removals: Removidos
+        sku: Variante
+        updations: Total de actualizaciones
+      product_views_to_cart_additions:
+        title: Producto 'Vistas' a 'Adiciones del carrito'
+        description: Relación entre el número de vistas (en la página de presentación del producto) y el número de veces que el producto se ha agregado al carrito después de la vista.
+        cart_additions: Adicciones al carrito
+        product_name: Producto
+        views: Vistas a pagina del producto
+        cart_to_view_ratio: Relación carrito - vistas
+      trending_search:
+        title: Tendencias de busqueda
+        description: Puede ver / buscar la lista de palabras clave que han sido buscadas por los clientes.
+        searched_term: Término buscado
+        occurrences: Ocurrencias
+      users_not_converted:
+        title: Users Not Converted
+        description: Information about number of registered users who haven’t purchased any product after registration.
+        signup_date: Signup At
+        user_email: Email
+      users_who_recently_purchased:
+        title: Users who purchased recently
+        description: Number of users who frequently purchased products
+        last_purchase_date: Last Purchase At
+        last_purchased_order_number: Last Purchased Order
+        purchase_count: Purchased Count
+        user_email: Email
+      users_who_have_not_recently_purchased:
+        title: Users who didn't purchase recently
+        description: Number of users who have not purchased anything since a particular time period
+        last_purchase_date: Last Purchase At
+        last_purchased_order_number: Last Purchased Order
+        user_email: Email
+      user_pool:
+        title: User Pool
+        description: To view monthly stats about type of users who visited site
+        months_name: Month
+        guest_users: Guests
+        active_users: Active Users(Registered)
+        new_sign_ups: New Users
+      payment_method_transactions:
+        title: Payment Method Transactions Count
+        description: Transactions from different payment methods
+        payment_method_name: Payment Method
+        payment_amount: Transaction Amount
+        months_name: Month
+      payment_method_transactions_conversion_rate:
+        payment_method_name: Payment Method
+        title: Payment Method Transaction Conversion Rate
+        description: Success/Failure rate of different payment methods
+        months_name: Month
+        payment_state: Payment State
+        count: Count
+      promotional_cost:
+        title: Promotional Cost
+        description: Total money invested on a particular promotion  - Admin will view total money invested, total revenue and profit from a particular promotion.
+        promotion_code: Code
+        promotion_discount: Discount
+        promotion_name: Promotion
+        promotion_start_date: Start Date
+        promotion_end_date: End Date
+        usage_count: Usage Count
+        months_name: Month
+      annual_promotional_cost:
+        title: Annual Promotional Cost
+        description: Total money invested on a particular promotion  - Admin will view total money invested, total revenue and profit from a particular promotion.
+        promotion_discount: Discount
+        promotion_name: Promotion
+        usage_count: Usage Count
+      sales_performance:
+        title: Sales Performance
+        description: Info about revenue, tax, shipment total and return amount.
+        adjustment_total: Adjustment Total
+        cost_price: Cost Price
+        months_name: Month
+        profit_loss: Profit/Loss
+        profit_loss_percent: Profit/Loss %
+        refund_amount: Refund Amount
+        revenue: Revenue
+        sale_price: Sale Price
+        shipping_charges: Shipping Charges
+        tax: Tax
+        promotion_discount: Promotional Discounts
+      unique_purchases:
+        title: Unique Purchases
+        description: Will project the data about how many unique users have purchased a particular product.
+        product_name: Product
+        sku: Variant
+        sold_count: Sold Count
+        users: Users
+      best_selling_products:
+        title: Best Selling Products
+        description: Best/least Selling Products as per maximum quantities purchased.
+        product_name: Product
+        sku: Variant
+        sold_count: Sold Quantity
+      product_views_to_purchases:
+        title: Product 'Views' To 'Purchases'
+        description: Ratio of number of views (on product show page) to number of times product has been purchased after view.
+        product_name: Product
+        purchases: Purchases
+        views: Views
+        purchase_to_view_ratio: Purchase To View Ratio
+      returned_products:
+        title: Producto Regresado
+        description: Número de productos devueltos
+        product_name: Producto
+        return_count: Recuento devuelto
+        sku: Variante
+      shipping_cost:
+        title: Costo de envío
+        name: Nombre del método de envío
+        months_name: Month
+        shipping_charge: Costo de envío
+        revenue: Ingresos
+        shipping_cost_percentage:  Costo de envio %
+      sales_tax:
+        title: Sales Tax
+        months_name: Month
+        zone_name: Zone
+        sales_tax: Sales Tax
+    front_end: UsuarioWeb
+    back_end: Admin (Sistema Interno)
+    shop_by_taxonomy: "%{taxonomy}"
+    volume_pricing: "Precios de mayoreo"
+    shipment_mailer:
+      shipped_email:
+        dear_customer: |
+          Querido cliente,
+    order_mailer:
+      confirm_email:
+          dear_customer: |
+            Querido cliente,
+    item_added_to_cart: "El artículo se agrego al carrito"
+    selected_quantity_not_available: "seleccionada no disponible para el artículo %{item}"
+    please_enter_reasonable_quantity: "Por favor ingrese una cantidad razonable para el artículo %{item}"
+    google_maps_placeholder: "Calle - Numero - Estado"
+    price_discount: "Descuento precio"
+    bulk_discount: "Descuentos por cantidad:"
+    percent_discount: "Descuento (%)"
+    order_states:
+      complete: "Completado"
+    street_address_2: "Dirección (Número exterior/interior)"
+    searchgoogle: "Buscar domicilio"
+    show_discontinued: "Mostrar descontinuados"
+    stock: "Existencias (Inventario)"
+    product_packages: Paquetes (Bundles)
+    i18n:
+      locales_displayed_on_frontend_select_box: "Idiomas que se muestran en la tienda"
+    store_credit_categories: "Categorias: credito de la tienda"
+    google_maps_api_key: 'Google maps api key'
+    environment: Ambiente
+    user_was_not_valid: "Usuario no válido."
+    add_another_service: 'Añadir otro servicio para inicio de sesión:'
+    authentications:
+      destroy: 'Método de autenticación destruido exitosamente.'
+    back_to_authentication_methods_list: "Volver a la lista de métodos de autenticación"
+    edit_social_method: 'Editando metodo de autenticación'
+    new_social_method: 'Nuevo método de autenticación'
+    no_authentication_methods_found: "No se encontraron métodos de autenticación"
+    one_more_step: 'Un paso más para completar tu registro desde %{kind}'
+    remove_authentication_option_confirmation: '¿Está seguro que quiere eliminar este método de autenticación?'
+    sign_into_account: 'Puedes iniciar sesión usando:'
+    sign_in_through_one_of_these_services: 'Iniciar sesión a través de uno de estos servicios:'
+    social_api_key: 'API Clave'
+    social_api_secret: 'API Secreto'
+    social_authentication_methods: 'Métodos de autenticación'
+    social_authentication_methods_description: 'Configurar métodos de autenticación de OAuth'
+    social_provider: 'Proveedor social'
+    please_confirm_your_email: 'Por favor confirme su email para continuar'
+    sign_in_with: 'Autententicado con %{provider}'
+    you_have_signed_in_with_these_services: "Has iniciado sesión con estos servicios:"
+    print_invoice:
+      date: Fecha
+      document_type: Tipo de documento
+      number: Número
+      firstname: Nombre
+      lastname: Apellido
+      email: Email
+      total: Total
+      documents: Documentos
+      buttons:
+        invoice: Imprimir Factura
+        packaging_slip: Imprimir Recibo para el Embalaje
+      order_invoice: Factura
+      order_packaging_slip: Recibo para el Embalaje
+      reimbursement_invoice: Factura para devolución
+      invoice: Factura del cliente
+      item_name: Nombre de elemento o SKU
+      of: de
+      via: vía
+      on_date: Fecha del pedido
+      packaging_slip: Recibo para el Embalaje
+      page: Página
+      payment_via: "%{gateway} El pago en línea #%{number} en %{date}"
+      preferences:
+        next_number: Imprimir factura siguiente número
+        use_footer: Utilice el pie de página
+        use_page_numbers: Usar números de página
+        anomaly_message: Mensaje de anomalía del pedido
+        footer_left: Contenido del pie izquierdo
+        footer_left_info: Por ejemplo Nombre de su empresa y la dirección.
+        footer_right: Contenido del pie derecho
+        footer_right_info: Por ejemplo su teléfono y correo electrónico.
+        page_layout: Diseño de página
+        page_size: Tamaño de página
+        print_buttons: Botones de imprimir
+        print_buttons_info: Lista separada por comas.
+        logo_path: Logo ruta imprimir factura
+        return_message: Mensaje de vuelta del pedido
+        font_face: Tipo de letra
+        font_size: Tamaño de letra
+        store_pdf: Guardar archivo en PDF
+        storage_path: Dirección de almacenamionto del PDF
+      settings: Configuración de impresión de facturas
+      unprocessed: No procesado
+      vat: IVA no aplicable
+      pdf_legend: PDF
+      invoice_slip_legend: Factura / Deslizamiento
+      invoice_number: 'Número de factura: %{number}'
+      invoice_date: 'Fecha de la factura: %{date}'
+    footer_left: ""
+    footer_left2: ""
+
+    footer_right: " Tel. 301-2927<br/><br/> "
+    footer_right2: " Audio y Tecnología Hermosillo <br/>  www.athermosillo.com"
+
+    size: "Medida"
+    price: "Precio"
+    invoice:
+      header: Factura del cliente
+      thanks: ""
+      print: Factura
+    packaging_slip:
+      header: Hoja de embalaje
+      print: Imprimir hoja de embalaje
+      thanks: Favor de checar el contenido de inmediato
+    reminder:
+      header: Recordatorio de pago
+      print: Recordatorio
+      thanks: Nuestro sistema no ha registrado ningún pago por esta factura. Le rogamos que corrija esta situación.
+    receipt:
+      header: Recibo
+      print: Recibo
+  activerecord:
+    attributes:
+      spree/address:
+        address2: Dirección (Número exterior/interior)

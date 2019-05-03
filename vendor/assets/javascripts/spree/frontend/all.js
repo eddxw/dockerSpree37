@@ -17,3 +17,4 @@
 //= require spree/frontend/spree_admin_roles_and_access
 //= require spree/frontend/spree_order_events_tracker
 //= require spree/frontend/spree_admin_activity_tracker
+//= require semantic-ui

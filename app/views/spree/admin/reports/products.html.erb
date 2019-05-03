@@ -1,0 +1,7 @@
+<% content_for :page_title do %>
+  <%= t(:products) %>
+<% end %>
+
+<%= @products %>
+
+<%= link_to 'CSV', products_admin_reports_path(format: :csv) %>

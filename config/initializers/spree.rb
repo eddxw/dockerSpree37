@@ -28,3 +28,6 @@ end
 
 
 Spree.user_class = "Spree::User"
+Spree::PermittedAttributes.user_attributes << :complete_name
+
+#Rails.application.config.i18n.default_locale = 'es-MX'

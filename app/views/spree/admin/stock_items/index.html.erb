@@ -1,0 +1,109 @@
+<%# <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/se/dt-1.10.18/datatables.min.css"/>
+
+<script type="text/javascript" src="https://cdn.datatables.net/v/se/dt-1.10.18/datatables.min.js"></script> %>
+
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/se/jszip-2.5.0/dt-1.10.18/b-1.5.4/b-colvis-1.5.4/b-html5-1.5.4/b-print-1.5.4/r-2.2.2/sl-1.2.6/datatables.min.css"/>
+ 
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/v/se/jszip-2.5.0/dt-1.10.18/b-1.5.4/b-colvis-1.5.4/b-html5-1.5.4/b-print-1.5.4/r-2.2.2/sl-1.2.6/datatables.min.js"></script>
+
+<% content_for :page_title do %>
+  <%= Spree.t(:stock_items) %>
+<% end %>
+
+<%= form_with url: admin_stock_items_path(), method: :get do |f| %>
+  <%= f.select(:stock_location ,options_for_select(Spree::StockLocation.all.map { |stock_location| [stock_location.name, stock_location.id]}, @stock_location.id), {include_blank: "Todo"}, onchange: 'this.form.submit(); this.disabled = true;',class: 'form-control')%>
+<% end %>
+
+<table id="stock_items-datatable" class="ui celled compact blue unstackable table" style="width:100%" data-source="<%= admin_stock_items_path(format: :json) %>">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Imagen</th>
+      <th>Nombre</th>
+      <th>SKU</th>
+      <th>Disponibles</th>
+      <th>Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+  </tbody>
+</table>
+
+<script>
+  var oTable;
+  jQuery(document).ready(function() {
+    oTable = $('#stock_items-datatable').DataTable({
+      select: true,
+      lengthChange: false,
+      buttons: [ 'pageLength','copy', 'excel', 'pdf', 'colvis', 'print' ],
+      // dom: 'lfBrtip',
+      "deferRender": true,
+      "processing": true,
+      "serverSide": true,
+      "ajax": $('#stock_items-datatable').data('source'),
+      "pagingType": "full_numbers",
+      "columns": [
+        {"data": "id"},
+        {"data": "image", sortable: false},
+        {"data": "name"},
+        {"data": "sku"},
+        {"data": "count_on_hand"},
+        {"data": "dt_actions", sortable: false},
+      ],
+      columnDefs: [
+        // { targets: [0, 1], visible: true},
+        { targets: [2], className: 'left aligned' },
+        { targets: '_all', className: 'center aligned' },
+        
+      ],
+      initComplete: function () {
+        oTable.buttons().container()
+          .appendTo( $('div.eight.column:eq(0)', oTable.table().container()) );
+      },
+      "language": {
+        "lengthMenu": "Mostrar _MENU_ registros por pagina",
+        "zeroRecords": "No se encontraron coincidencias",
+        "info": "Mostrando pagina _PAGE_ de _PAGES_",
+        "infoEmpty": "No hay registros",
+        "infoFiltered": "(filtrado de _MAX_ registros totales)",
+        "loadingRecords": "Cargando...",
+        "search": "Buscar:",
+        "paginate": {
+            "first": "Primero",
+            "last": "Ultimo",
+            "next": "Siguiente",
+            "previous": "Anterior"
+        },
+        buttons: {
+          colvis: 'Columnas',
+          print: 'Imprimir',
+          copy: 'Copiar',
+          pageLength: 'Mostrar'
+        },
+      },
+    });
+    
+    var timeout = null;
+
+    $("div.dataTables_filter input").unbind();
+    $("div.dataTables_filter input").keyup( function (e) {
+      e.preventDefault();
+
+      clearTimeout(timeout);
+      let search = this.value;
+      // Make a new timeout set to go off in 800ms
+      timeout = setTimeout(function () {
+          // oTable.fnFilter( search );
+          oTable.search( search ).draw();
+      }, 400);
+
+      if (e.keyCode == 13) {
+        // oTable.fnFilter( search );
+        oTable.search( search ).draw();
+      }
+    } );
+  });
+</script>

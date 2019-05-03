@@ -1,0 +1,7 @@
+<% content_for :page_actions do %>
+  <%= link_to(spree.new_admin_order_path(user_id: @user.id),  
+        class: "ui big green ui labeled icon button") do %>
+    <i class="icon cart"></i>
+    <%= Spree.t(:create_new_order) %>
+  <% end %>
+<% end if can?(:create, Spree::Order) %>

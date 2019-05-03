@@ -1,21 +1,4 @@
 GIT
-  remote: https://github.com/eddxw/datatables_spree_point_of_sale.git
-  revision: 1a91ed5902272e5705f8c68dc6e4b7fd2c10b983
-  specs:
-    spree-point-of-sale (3.6.5)
-      barby
-      chunky_png
-      prawn
-      spree_core (~> 3.6)
-
-GIT
-  remote: https://github.com/eddxw/spree_html_invoice.git
-  revision: 880f1c39cc4b69307b51585d0d20b5215ce6a351
-  specs:
-    spree_html_invoice (3.6.1)
-      spree_core (>= 3.2.0, < 4.0)
-
-GIT
   remote: https://github.com/spree-contrib/better_spree_paypal_express.git
   revision: 181cce8bcd14593e3ee0de0e95a2f572f53ef2fe
   specs:
@@ -105,6 +88,21 @@ GIT
     spree_order_events_tracker (0.0.1.alpha)
       spree_core (>= 3.1.0, < 4.0)
       spree_extension
+
+PATH
+  remote: extensiones/spree-html-invoice
+  specs:
+    spree_html_invoice (3.6.1)
+      spree_core (>= 3.2.0, < 4.0)
+
+PATH
+  remote: extensiones/spree-point-of-sale
+  specs:
+    spree-point-of-sale (3.6.5)
+      barby
+      chunky_png
+      prawn
+      spree_core (~> 3.6)
 
 GEM
   remote: https://rubygems.org/

@@ -1,0 +1,48 @@
+// $import-google-fonts: true !default;
+// $font-url: 'https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic&subset=latin,latin-ext' !default;
+// $font-name: 'Lato' !default;
+// $font-family: $font-name, 'Helvetica Neue', Arial, Helvetica, sans-serif !default;
+
+// @import "semantic-ui/modules/dropdown";
+
+// @import "semantic-ui/collections/table";
+// @import "semantic-ui/collections/menu";
+// @import "semantic-ui/collections/grid";
+// @import "semantic-ui/collections/form";
+
+// @import "semantic-ui/elements/icon";
+// @import "semantic-ui/elements/input";
+// @import "semantic-ui/elements/button";
+
+// @import "semantic-ui/views/item";
+
+@import "semantic-ui";
+$button: "github";
+$blue: yellow;
+
+#main-part {
+  padding: 50px 35px 0;
+}
+
+body {
+  background-color: #eaeaea;
+}
+
+#main-sidebar {
+  background-color: #ededed;
+  ul.nav.nav-pills {
+    background-color: hsla(0, 0%, 95%, 1);
+  }
+}
+
+.panel-body {
+  background-color: hsla(0, 0%, 95%, 1);
+}
+tbody {
+  background-color: hsla(0, 0%, 95%, 1);
+}
+
+.well {
+  background-color: hsla(0, 0%, 95%, 1);
+}
+// #f2f2f2

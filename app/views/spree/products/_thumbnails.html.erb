@@ -4,7 +4,7 @@
     <% @product.images.each do |i| %>
       <li class='tmb-all tmb-<%= i.viewable.id %>'>
         <% img_tag = image_tag(main_app.url_for(i.url(:mini)), class: "thumbnail", alt: set_image_alt(i, :mini)) %>
-        <%= link_to(img_tag, main_app.url_for(i.url(:product))) %>
+        <%= link_to(img_tag, main_app.url_for(i.url(:product)), class: 'popupimage') %>
       </li>
     <% end %>
 
@@ -13,9 +13,25 @@
         <% next if @product.images.include?(i) %>
         <li class='vtmb tmb-<%= i.viewable.id %>'>
           <% img_tag = image_tag(main_app.url_for(i.url(:mini)), class: "thumbnail", alt: set_image_alt(i, :mini)) %>
-          <%= link_to(img_tag, main_app.url_for(i.url(:product))) %>
+          <%= link_to(img_tag, main_app.url_for(i.url(:product)), class: 'popupimage') %>
         </li>
       <% end %>
     <% end %>
   </ul>
 <% end %>
+
+<div class="ui modal">
+  <div class="content image">
+    <img src="" alt="" class="ui fluid image"/>
+  </div>
+</div>
+<script>
+  $(document).ready(function(){
+    $('.popupimage').click(function(event){
+      console.log($(this));
+      event.preventDefault();
+      $('.ui.modal img').attr('src', $(this).attr('href'));
+      $('.ui.modal').modal('show');
+    });
+  });
+</script>

@@ -30,4 +30,5 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  spree:
+    select_stock_location: 'Stock Location'

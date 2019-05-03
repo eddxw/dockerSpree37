@@ -1,0 +1,7 @@
+<% content_for :page_title do %>
+  <%= t(:variants) %>
+<% end %>
+
+<%= @variants %>
+
+<%= link_to 'CSV', variants_admin_reports_path(format: :csv) %>

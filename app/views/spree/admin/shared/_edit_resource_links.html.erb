@@ -1,0 +1,17 @@
+<div class="ui large buttons">
+  <%= button_tag(type: 'submit', 
+                class: 'ui positive button', 
+                data: { disable_with: "#{ Spree.t(:saving) }..." }) do %>
+    <i class="sync alternate icon"></i>
+    <%= Spree.t('actions.update') %>
+  <% end %>
+  <div class="or" data-text="<%= Spree.t(:or) %>"></div>
+  <%= link_to(collection_url,  
+        class: "ui negative button") do %>
+    <i class="cancel icon"></i>
+    <%= Spree.t('actions.cancel') %>
+  <% end %>
+</div>
+
+
+

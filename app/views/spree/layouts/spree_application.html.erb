@@ -10,6 +10,11 @@
   <body class="<%= body_class %>" id="<%= @body_id || 'default' %>" data-hook="body">
     <%= render partial: 'spree/shared/header' %>
 
+    <% if current_page?("/") %>
+      <% slides = Spree::Slide.published %>
+      <%= render partial: 'spree/shared/slider', locals: { slider: slides } %>
+    <% end %>
+    
     <div class="container">
       <div class="row" data-hook>
         <%= spree_breadcrumbs(@taxon) %>
@@ -24,5 +29,6 @@
         <%= yield :templates %>
       </div>
     </div>
+    <% console if Rails.env.development? %>
   </body>
 </html>
