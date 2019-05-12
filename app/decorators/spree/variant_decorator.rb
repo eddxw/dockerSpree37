@@ -43,11 +43,11 @@ class Spree::VariantDecorator < ApplicationDecorator
   end
 
   def image
-    object.images.first ? h.mini_image(object) : h.mini_image(product)
+    object.images.first ? h.mini_image(object) : h.mini_image(object.product)
     # h.image_tag(img)
   end
   def stock_image
-    object.id
+    object.images.first ? h.mini_image(object) : h.mini_image(object.product)
   end
   def name
     h.object.name.truncate(10)

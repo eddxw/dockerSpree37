@@ -44,7 +44,8 @@ module Spree
       end
 
       def variants
-        @variants = Spree::Variant.not_deleted.not_discontinued.includes(:product).order(:id)
+        @variants = Spree::Variant.joins(:product, :stock_items).group('spree_variants.id, spree_products.name').order(:id).select('spree_variants.id, spree_variants.sku, spree_products.name, SUM(count_on_hand) as total_on_hand, is_master')
+        # @variants = Spree::Variant.not_deleted.not_discontinued.includes(:product).order(:id)
         respond_to do |format|
           format.html
           format.csv { send_data @variants.to_csv, filename: "variants-#{Date.today}.csv" }

@@ -10,7 +10,11 @@
         <div class="form-group">
           <%= f.field_container :quantity do %>
             <%= f.label :quantity, Spree.t(:quantity) %>
-            <%= f.number_field :quantity, class: 'form-control', value: 1 %>
+            <% if try_spree_current_user.has_spree_role?(:admin) %>
+              <%= f.number_field :quantity, class: 'form-control', value: 1%>
+            <% else %>
+              <%= f.number_field :quantity, class: 'form-control', value: 1, min: 0 %>
+            <% end %>
           <% end %>
         </div>
       </div>

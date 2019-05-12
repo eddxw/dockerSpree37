@@ -3,7 +3,7 @@
 module Spree
   Variant.class_eval do
     def self.to_csv
-      attributes = %w[product_id id name description available_on slug shipping_category_id sku is_master cost_price]
+      attributes = %w[id sku name total_on_hand]
 
       CSV.generate(headers: true) do |csv|
         csv << attributes

@@ -92,3 +92,10 @@ gem 'draper'
 gem 'spree_order_events_tracker', github: 'vinsol-spree-contrib/spree_order_events_tracker', :branch => "develop"
 gem 'spree_admin_activity_tracker', github: 'vinsol-spree-contrib/spree_admin_activity_tracker', branch: 'develop'
 gem 'vertical-timeline-rails'
+
+gem 'csv'
+
+gem 'spree_address_auto_complete', git: 'https://github.com/vinsol-spree-contrib/spree_address_auto_complete', branch: 'master'
+
+gem 'elasticsearch-model'
+gem 'elasticsearch-rails'

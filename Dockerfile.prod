@@ -33,6 +33,8 @@ RUN ["chmod", "+x", "/usr/src/app/wait-for"]
 ENV RAILS_ENV production
 ENV POSTGRES_USER postgres
 ENV DB_ADAPTER=nulldb
+ENV RAILS_MASTER_KEY=8ee68db1b7468c63bfe55ea68dfb044a
+
 
 ARG DB_ADAPTER
 
