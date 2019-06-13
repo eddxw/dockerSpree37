@@ -13,6 +13,7 @@ module Spree
           redirect_to admin_stock_locations_path
         end
       end
+      
     end
   end
 end

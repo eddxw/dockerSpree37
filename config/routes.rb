@@ -14,6 +14,11 @@ Spree::Core::Engine.add_routes do
   # Add your extension routes here
   post "admin/pos/change_garantia/:number" , to: "admin/pos#change_garantia", as: :change_garantia_admin_pos
 
+  resources :products do
+    collection do
+      get :autocomplete
+    end
+  end
   namespace :admin, path: Spree.admin_path do
     resources :stock_items
 

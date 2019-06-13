@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # Configure Spree Preferences
 #
 # Note: Initializing preferences available within the Admin will overwrite any changes that were made through the user interface when you restart.
@@ -26,8 +28,7 @@ Spree.dependencies do |dependencies|
   # dependencies.cart_add_item_service = 'MyNewAwesomeService'
 end
 
-
-Spree.user_class = "Spree::User"
+Spree.user_class = 'Spree::User'
 Spree::PermittedAttributes.user_attributes << :complete_name
 
-#Rails.application.config.i18n.default_locale = 'es-MX'
+Rails.application.config.i18n.default_locale = 'es-MX'

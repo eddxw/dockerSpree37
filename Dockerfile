@@ -24,6 +24,8 @@ WORKDIR /usr/src/app
 
 ENV BUNDLE_PATH /gems
 
+ENV ELASTICSEARCH_URL elasticsearch:9200
+
 RUN bundle 
 
 COPY . /usr/src/app/

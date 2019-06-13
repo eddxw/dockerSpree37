@@ -45,5 +45,6 @@
 </script>
 
 <% if I18n.locale != :en %>
-  <%= javascript_include_tag "select2_locale_#{I18n.locale}" %>
+  <%#= javascript_include_tag "select2_locale_#{I18n.locale}" %>
+  <%= javascript_include_tag "select2_locale_es" %>
 <% end %>

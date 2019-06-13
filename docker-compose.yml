@@ -25,7 +25,7 @@ services:
 
   elasticsearch:
     image: elasticsearch:6.7.2
-    hostname: elasticsearch
+    # hostname: elasticsearch
     ports:
       - "9200:9200"
 

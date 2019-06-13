@@ -5,6 +5,26 @@
   </div>
 <% end %>
 
+<%= form_tag products_path, method: :get do %>
+  <%= text_field_tag :query, params[:query], class: 'form-control', id: "product_search" %>
+  <%= submit_tag 'Search' %>
+<% end %>
+
+<script>
+  var products = new Bloodhound({
+    datumTokenizer: Bloodhound.tokenizers.whitespace,
+    queryTokenizer: Bloodhound.tokenizers.whitespace,
+    remote: {
+      url: '/products/autocomplete?query=%QUERY',
+      wildcard: '%QUERY'
+    }
+  });
+  $('#product_search').typeahead(null, {
+    source: products
+  });
+</script>
+
+
 <div data-hook="homepage_products">
   <% cache_if cannot?(:admin, current_store), cache_key_for_products do %>
     <%= render partial: 'spree/shared/products', locals: { products: @products } %>

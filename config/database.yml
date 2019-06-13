@@ -3,7 +3,7 @@ default: &default
   encoding: unicode
 
   host: <%= Rails.application.credentials[Rails.env.to_sym][:DATABASE_HOST] || ENV.fetch('DATABASE_HOST') %>
-  username: <%= Rails.application.credentials[Rails.env.to_sym][:DATAPOSTGRES_USERBASE_HOST] || ENV.fetch('POSTGRES_USER') %>
+  username: <%= Rails.application.credentials[Rails.env.to_sym][:POSTGRES_USER] || ENV.fetch('POSTGRES_USER') %>
   password: <%= Rails.application.credentials[Rails.env.to_sym][:POSTGRES_PASSWORD] || ENV.fetch('POSTGRES_PASSWORD') %>
   database: <%= Rails.application.credentials[Rails.env.to_sym][:POSTGRES_DB] || ENV.fetch('POSTGRES_DB') %>
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>

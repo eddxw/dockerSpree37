@@ -17,6 +17,7 @@ es-MX:
     config_name: "Localizacion Diapositivas"
   active_shipping_settings: "Configuracion Active Shipping"
   spree:
+    on_hand: A la mano
     select_stock_location: 'Ubicación de inventario'
     timeline: Historial
     spree_tracking:

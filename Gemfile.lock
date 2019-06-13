@@ -21,9 +21,10 @@ GIT
 
 GIT
   remote: https://github.com/spree-contrib/spree_i18n.git
-  revision: a03ecad00a1e64ac24acc92ac49febea384d2428
+  revision: 4d715d98c8ee17fe2d7d568a367e274aab2a62f5
   specs:
     spree_i18n (3.3.2)
+      deface (~> 1.0)
       i18n_data
       kaminari-i18n
       rails-i18n
@@ -41,9 +42,10 @@ GIT
 
 GIT
   remote: https://github.com/spree-contrib/spree_social.git
-  revision: 9a06d71523b13421c5120b79b6f5b0f8e32e691c
+  revision: fd5988e2d6f768fe461e9b901c1621e0a9134a38
   specs:
     spree_social (3.3.2)
+      deface (~> 1.0)
       oa-core
       omniauth
       omniauth-amazon
@@ -176,7 +178,7 @@ GEM
     ajax-datatables-rails (1.0.0)
       railties (>= 4.2)
     arel (9.0.0)
-    autoprefixer-rails (9.5.1)
+    autoprefixer-rails (9.5.1.1)
       execjs
     awesome_nested_set (3.1.4)
       activerecord (>= 4.0.0, < 5.3)
@@ -190,6 +192,9 @@ GEM
       autoprefixer-rails (>= 5.2.1)
       sassc (>= 2.0.0)
     builder (3.2.3)
+    bullet (6.0.0)
+      activesupport (>= 3.0.0)
+      uniform_notifier (~> 1.11)
     byebug (11.0.1)
     callsite (0.0.11)
     camertron-eprun (1.1.1)
@@ -215,11 +220,13 @@ GEM
       execjs
     coffee-script-source (1.12.2)
     concurrent-ruby (1.1.5)
+    coolline (0.5.0)
+      unicode_utils (~> 1.4)
     crass (1.0.4)
     css_parser (1.7.0)
       addressable
-    csv (3.0.4)
-    deface (1.3.2)
+    csv (3.1.1)
+    deface (1.4.0)
       nokogiri (>= 1.6)
       polyglot
       rails (>= 4.1)
@@ -269,14 +276,17 @@ GEM
       activesupport (>= 4.2.0)
     hashie (3.6.0)
     highline (2.0.2)
-    hirb (0.7.3)
     htmlentities (4.3.4)
     i18n (1.6.0)
       concurrent-ruby (~> 1.0)
     i18n_data (0.10.0)
-    jbuilder (2.8.0)
+    jazz_fingers (5.0.0)
+      awesome_print (~> 1.6)
+      pry (~> 0.10)
+      pry-byebug (~> 3.4)
+      pry-coolline (~> 0.2)
+    jbuilder (2.9.1)
       activesupport (>= 4.2.0)
-      multi_json (>= 1.2)
     jquery-rails (4.3.3)
       rails-dom-testing (>= 1, < 3)
       railties (>= 4.2.0)
@@ -330,7 +340,7 @@ GEM
     msgpack (1.2.10)
     multi_json (1.13.1)
     multi_xml (0.6.0)
-    multipart-post (2.0.0)
+    multipart-post (2.1.1)
     nio4r (2.3.1)
     nokogiri (1.10.3)
       mini_portile2 (~> 2.4.0)
@@ -396,6 +406,11 @@ GEM
     pry (0.12.2)
       coderay (~> 1.1.0)
       method_source (~> 0.9.0)
+    pry-byebug (3.7.0)
+      byebug (~> 11.0)
+      pry (~> 0.10)
+    pry-coolline (0.2.5)
+      coolline (~> 0.5)
     public_suffix (3.0.3)
     puma (3.12.1)
     rabl (0.13.1)
@@ -442,7 +457,7 @@ GEM
     rb-fsevent (0.10.3)
     rb-inotify (0.10.0)
       ffi (~> 1.0)
-    redis (4.1.0)
+    redis (4.1.1)
     request_store (1.4.1)
       rack (>= 1.4)
     responders (2.4.1)
@@ -466,38 +481,42 @@ GEM
     sassc (2.0.1)
       ffi (~> 1.9)
       rake
+    searchkick (4.0.0)
+      activemodel (>= 5)
+      elasticsearch (>= 6)
+      hashie
     select2-rails (3.5.9.1)
       thor (~> 0.14)
     semantic-ui-sass (2.4.0.1)
       sass (>= 3.2)
-    spree (3.7.2)
-      spree_api (= 3.7.2)
-      spree_backend (= 3.7.2)
-      spree_cmd (= 3.7.2)
-      spree_core (= 3.7.2)
-      spree_frontend (= 3.7.2)
-      spree_sample (= 3.7.2)
-    spree_api (3.7.2)
+    spree (3.7.3)
+      spree_api (= 3.7.3)
+      spree_backend (= 3.7.3)
+      spree_cmd (= 3.7.3)
+      spree_core (= 3.7.3)
+      spree_frontend (= 3.7.3)
+      spree_sample (= 3.7.3)
+    spree_api (3.7.3)
       doorkeeper (~> 5.0)
       fast_jsonapi (~> 1.5)
       rabl (~> 0.13.1)
-      spree_core (= 3.7.2)
+      spree_core (= 3.7.3)
       versioncake (~> 3.4.0)
     spree_auth_devise (3.5.1)
       devise (>= 4.4, < 4.7)
       devise-encryptable (= 0.2.0)
       spree_core (>= 3.1.0, < 4.0)
       spree_extension
-    spree_backend (3.7.2)
+    spree_backend (3.7.3)
       bootstrap-sass (~> 3.4)
       jquery-rails (~> 4.3)
       jquery-ui-rails (~> 6.0.1)
       select2-rails (= 3.5.9.1)
-      spree_api (= 3.7.2)
-      spree_core (= 3.7.2)
-    spree_cmd (3.7.2)
+      spree_api (= 3.7.3)
+      spree_core (= 3.7.3)
+    spree_cmd (3.7.3)
       thor (~> 0.14)
-    spree_core (3.7.2)
+    spree_core (3.7.3)
       activemerchant (~> 1.67)
       acts-as-taggable-on (~> 6.0)
       acts_as_list (~> 0.8)
@@ -525,17 +544,17 @@ GEM
     spree_extension (0.0.9)
       activerecord (>= 4.2)
       spree_core
-    spree_frontend (3.7.2)
+    spree_frontend (3.7.3)
       bootstrap-sass (~> 3.4)
       canonical-rails (~> 0.2.3)
       jquery-rails (~> 4.3)
-      spree_api (= 3.7.2)
-      spree_core (= 3.7.2)
+      spree_api (= 3.7.3)
+      spree_core (= 3.7.3)
     spree_gateway (3.4.1)
       spree_core (>= 3.1.0, < 4.0)
       spree_extension
-    spree_sample (3.7.2)
-      spree_core (= 3.7.2)
+    spree_sample (3.7.3)
+      spree_core (= 3.7.3)
     spring (2.0.2)
       activesupport (>= 4.2)
     spring-watcher-listen (2.0.1)
@@ -577,6 +596,8 @@ GEM
       thread_safe (~> 0.1)
     uglifier (4.1.20)
       execjs (>= 0.3.0, < 3)
+    unicode_utils (1.4.0)
+    uniform_notifier (1.12.1)
     versioncake (3.4.0)
       actionpack (>= 3.2)
       activesupport (>= 3.2)
@@ -602,9 +623,9 @@ PLATFORMS
 DEPENDENCIES
   activerecord-nulldb-adapter
   ajax-datatables-rails
-  awesome_print
   barby (~> 0.6.6)
   bootsnap (>= 1.1.0)
+  bullet
   byebug
   coffee-rails (~> 4.2)
   csv
@@ -612,16 +633,16 @@ DEPENDENCIES
   elasticsearch-model
   elasticsearch-rails
   figaro
-  hirb
+  jazz_fingers
   jbuilder (~> 2.5)
   listen (>= 3.0.5, < 3.2)
   meta_request
   pg (~> 1.0)
-  pry
   puma (~> 3.11)
   rails (~> 5.2.2, >= 5.2.2.1)
   redis (~> 4.0)
   sass-rails (~> 5.0)
+  searchkick
   semantic-ui-sass
   spree (~> 3.7)
   spree-point-of-sale!
@@ -649,7 +670,7 @@ DEPENDENCIES
   yajl-ruby
 
 RUBY VERSION
-   ruby 2.6.2p47
+   ruby 2.6.3p62
 
 BUNDLED WITH
    1.17.2

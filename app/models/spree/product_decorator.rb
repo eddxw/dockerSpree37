@@ -2,6 +2,7 @@
 
 module Spree
   Product.class_eval do
+    # searchkick
     def self.to_csv
       attributes = %w[id name description available_on slug promotionable shipping_category_id sku is_master cost_price]
 
