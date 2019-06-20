@@ -19,6 +19,7 @@ Spree::Core::Engine.add_routes do
       get :autocomplete
     end
   end
+  
   namespace :admin, path: Spree.admin_path do
     resources :stock_items
 

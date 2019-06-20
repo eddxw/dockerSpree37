@@ -17,8 +17,9 @@ class VariantDatatable < AjaxDatatablesRails::ActiveRecord
       {
         image: record.decorate.image,
         sku: "#{record.sku} #{record.options_text}",
-        name: record.name.truncate(50),
+        name: record.name.truncate(60),
         stock: record.stock_items.find_by(stock_location_id: stock_location.id).count_on_hand,
+        price: record.price,
         actions: record.decorate.actions(order, record.id),
         DT_RowId: record.id
       }
@@ -42,8 +43,6 @@ class VariantDatatable < AjaxDatatablesRails::ActiveRecord
   end
 
   def get_raw_records
-    # insert query here
-    # User.all
-    Spree::Variant.includes(%i[product images stock_items]).limit(30).references(:product)
+    Spree::Variant.includes(%i[product images stock_items]).references(:product)
   end
 end
